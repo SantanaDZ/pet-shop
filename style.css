@@ -1,0 +1,339 @@
+/* * ----------------------------------------------------
+ * ESTILOS GLOBAIS E VARIÁVEIS CSS
+ * Tema: Petshop "Melhor Amigo" (Branco e Verde)
+ * ----------------------------------------------------
+ */
+:root {
+    --cor-primaria: #4CAF50;    /* Verde Destaque */
+    --cor-secundaria: #2E7D32;  /* Verde Escuro */
+    --cor-fundo: #FFFFFF;       /* Fundo Branco */
+    --cor-texto: #333333;       /* Texto Principal */
+    --cor-fundo-secundario: #f1f8e9; /* Fundo Suave para seções */
+    
+    --font-principal: 'Inter', sans-serif;
+    --sombra-card: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset Básico e Fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    overflow-x: hidden; /* Previne scroll horizontal em mobile */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ----------------------------------------------------
+ * CABEÇALHO (HEADER)
+ * ----------------------------------------------------
+ */
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.logo span {
+    color: var(--cor-secundaria);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: var(--cor-fundo);
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* ----------------------------------------------------
+ * BOTÃO (Call-to-Action)
+ * ----------------------------------------------------
+ */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fundo) !important;
+    text-align: center;
+    border-radius: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #388e3c; /* Verde um pouco mais escuro */
+    transform: translateY(-2px);
+}
+
+/* ----------------------------------------------------
+ * SEÇÕES E TÍTULOS
+ * ----------------------------------------------------
+ */
+section {
+    padding: 3rem 0;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--cor-secundaria);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+}
+
+.card {
+    background-color: var(--cor-fundo);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: var(--sombra-card);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ----------------------------------------------------
+ * FOOTER
+ * ----------------------------------------------------
+ */
+footer {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fundo);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+footer a {
+    color: var(--cor-fundo);
+    text-decoration: underline;
+}
+
+/* ----------------------------------------------------
+ * RESPONSIVIDADE (MOBILE-FIRST)
+ * ----------------------------------------------------
+ */
+
+/* Layout de Produtos e Serviços (Grid) */
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: 1fr; /* Padrão Mobile: 1 coluna */
+    gap: 20px;
+}
+
+
+/* Media Query para Tablets (a partir de 600px) */
+@media (min-width: 600px) {
+    /* Layout de Produtos e Serviços (2 colunas) */
+    .grid-3-cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Media Query para Desktop (a partir de 992px) */
+@media (min-width: 992px) {
+    /* Layout de Produtos e Serviços (3 colunas) */
+    .grid-3-cols {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .logo h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Estilos Específicos para Mobile (Menu) */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        display: block;
+        padding: 8px 0;
+    }
+}
+
+/* ----------------------------------------------------
+ * PÁGINA INICIAL - HERO (BANNERS)
+ * ----------------------------------------------------
+ */
+#hero {
+    background-color: var(--cor-fundo-secundario);
+    text-align: center;
+    padding: 4rem 0;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--cor-texto);
+}
+
+/* Imagem de Destaque */
+.hero-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 2rem;
+    box-shadow: var(--sombra-card);
+}
+/* ----------------------------------------------------
+ * PÁGINA DE PRODUTOS
+ * ----------------------------------------------------
+ */
+.product-card {
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 0.5rem;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+    margin-bottom: 1rem;
+}
+
+/* ----------------------------------------------------
+ * PÁGINA DE GALERIA
+ * ----------------------------------------------------
+ */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: var(--sombra-card);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* ----------------------------------------------------
+ * PÁGINA DE CONTATO
+ * ----------------------------------------------------
+ */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--cor-fundo-secundario);
+    border-radius: 10px;
+    box-shadow: var(--sombra-card);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: var(--font-principal);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.info-box {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.info-box p {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.info-box strong {
+    color: var(--cor-secundaria);
+}

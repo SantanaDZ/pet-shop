@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhor Amigo - Petshop | Contato</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO (Repetido em todas as páginas) -->
+    <header>
+        <div class="container nav-content">
+            <div class="logo">
+                <h1>Melhor <span>Amigo</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="contato.html" style="background-color: var(--cor-secundaria);">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. PÁGINA DE CONTATO -->
+    <section id="contact-us" class="container">
+        <h2>Fale Conosco</h2>
+        
+        <form action="#" method="POST" class="contact-form">
+            <h3>Formulário de Contato</h3>
+            <p style="margin-bottom: 1.5rem; color: #666;">Estamos ansiosos para conhecê-lo e ao seu melhor amigo! Envie uma mensagem:</p>
+            
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefone">Telefone (Opcional):</label>
+            <input type="tel" id="telefone" name="telefone">
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+            <!-- Opção de Newsletter -->
+            <div style="margin-bottom: 1.5rem;">
+                <input type="checkbox" id="newsletter" name="newsletter" value="sim">
+                <label for="newsletter" style="display: inline; font-weight: normal;">Desejo assinar a newsletter para receber atualizações e promoções.</label>
+            </div>
+
+            <button type="submit" class="btn">Enviar Mensagem</button>
+        </form>
+        
+        <!-- INFORMAÇÕES ADICIONAIS DE CONTATO -->
+        <div class="info-box">
+            <h3>Informações Adicionais</h3>
+            <p><strong>Telefone:</strong> (99) 9999-9999</p>
+            <p><strong>E-mail:</strong> contato@melhoramigopetshop.com</p>
+            <p><strong>Endereço Físico:</strong> Rua dos Pets, 123 - Bairro Amigo - Cidade Feliz</p>
+        </div>
+
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2024 Petshop Melhor Amigo. Confie em nós para cuidar do seu melhor amigo! | <a href="index.html">Voltar ao Início</a></p>
+    </footer>
+
+</body>
+</html>
