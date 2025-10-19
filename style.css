@@ -1,28 +1,29 @@
 /* * ----------------------------------------------------
  * ESTILOS GLOBAIS E VARIÁVEIS CSS
- * Tema: Petshop "Melhor Amigo" (Branco e Verde)
+ * Tema: Petshop "Melhor Amigo" (Branco, Laranja e Amarelo)
  * ----------------------------------------------------
  */
 :root {
-    --cor-primaria: #4CAF50;    /* Verde Destaque */
-    --cor-secundaria: #2E7D32;  /* Verde Escuro */
+    --cor-primaria: #FF9800;    /* Laranja Destaque/Pêssego */
+    --cor-secundaria: #F4511E;  /* Laranja Escuro/Tijolo */
     --cor-fundo: #FFFFFF;       /* Fundo Branco */
     --cor-texto: #333333;       /* Texto Principal */
-    --cor-fundo-secundario: #f1f8e9; /* Fundo Suave para seções */
+    --cor-fundo-secundario: #FFF3E0; /* Fundo Suave Amarelado para seções */
     
-    --font-principal: 'Inter', sans-serif;
+    --font-principal: 'Montserrat', sans-serif;
     --sombra-card: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Reset Básico e Fontes */
 * {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font-principal);
+    
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     line-height: 1.6;
@@ -32,7 +33,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
 }
 
 /* ----------------------------------------------------
@@ -40,7 +41,7 @@ body {
  * ----------------------------------------------------
  */
 header {
-    background-color: var(--cor-primaria);
+    background-color: var(--cor-primaria); /* Alterado para Laranja Pêssego */
     color: var(--cor-fundo);
     padding: 1rem 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -56,10 +57,21 @@ header {
     font-size: 1.8rem;
     font-weight: 700;
     margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .logo span {
-    color: var(--cor-secundaria);
+    color: var(--cor-secundaria); /* Alterado para Laranja Escuro */
+}
+
+nav {
+    /* Define a área de navegação como um contêiner flexível */
+    flex-grow: 1; 
+    /* Centraliza o conteúdo (a lista ul) dentro da nav */
+    display: flex;
+    justify-content: center;
 }
 
 nav ul {
@@ -77,7 +89,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-secundaria); /* Alterado para Laranja Escuro */
 }
 
 /* ----------------------------------------------------
@@ -87,7 +99,7 @@ nav a:hover {
 .btn {
     display: inline-block;
     padding: 12px 25px;
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-secundaria); /* Alterado para Laranja Escuro */
     color: var(--cor-fundo) !important;
     text-align: center;
     border-radius: 25px;
@@ -99,7 +111,7 @@ nav a:hover {
 }
 
 .btn:hover {
-    background-color: #388e3c; /* Verde um pouco mais escuro */
+    background-color: #d84315; /* Laranja mais escuro para hover */
     transform: translateY(-2px);
 }
 
@@ -108,12 +120,12 @@ nav a:hover {
  * ----------------------------------------------------
  */
 section {
-    padding: 3rem 0;
+    padding: 4rem 0;
 }
 
 h2 {
     font-size: 2rem;
-    color: var(--cor-secundaria);
+    color: var(--cor-secundaria); /* Alterado para Laranja Escuro */
     text-align: center;
     margin-bottom: 2.5rem;
     font-weight: 700;
@@ -122,7 +134,7 @@ h2 {
 .card {
     background-color: var(--cor-fundo);
     border-radius: 10px;
-    padding: 1.5rem;
+    padding: 2rem;
     box-shadow: var(--sombra-card);
     transition: transform 0.3s;
 }
@@ -136,7 +148,7 @@ h2 {
  * ----------------------------------------------------
  */
 footer {
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-secundaria); /* Alterado para Laranja Escuro */
     color: var(--cor-fundo);
     text-align: center;
     padding: 1.5rem 0;
@@ -201,6 +213,21 @@ footer a {
         display: block;
         padding: 8px 0;
     }
+    
+    /* Galeria responsiva para mobile */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-width: 100%;
+    }
+}
+
+/* Media Query para tablets na galeria */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
 }
 
 /* ----------------------------------------------------
@@ -208,14 +235,23 @@ footer a {
  * ----------------------------------------------------
  */
 #hero {
-    background-color: var(--cor-fundo-secundario);
+    background-color: var(--cor-fundo-secundario); /* Alterado para Amarelo Pastel */
     text-align: center;
     padding: 4rem 0;
 }
 
+/* ----------------------------------------------------
+ * SEÇÃO DE PROMOÇÕES
+ * ----------------------------------------------------
+ */
+#promos {
+    padding: 4rem 0;
+    background-color: var(--cor-fundo);
+}
+
 #hero h1 {
     font-size: 3rem;
-    color: var(--cor-secundaria);
+    color: var(--cor-secundaria); /* Alterado para Laranja Escuro */
     margin-bottom: 1rem;
 }
 
@@ -225,13 +261,33 @@ footer a {
     color: var(--cor-texto);
 }
 
+/* ----------------------------------------------------
+ * NOVO ESTILO: Centralizando a imagem dentro do contêiner
+ * ----------------------------------------------------
+ */
+#hero .container {
+    /* Define o container como flex para poder centralizar os itens dentro dele */
+    display: flex;
+    /* Alinha todos os itens do container no centro (horizontalmente) */
+    justify-content: center;
+    /* Faz os itens ficarem empilhados, mas a centralização horizontal ainda funciona */
+    flex-direction: column; 
+    /* Garante que o texto volte para o centro */
+    align-items: center; 
+    padding: 2px;
+}
+
+
 /* Imagem de Destaque */
 .hero-image {
-    width: 100%;
-    max-width: 600px;
+    /* Seus estilos originais para a imagem */
+    width: 300px; 
     height: auto;
-    border-radius: 10px;
-    margin-top: 2rem;
+    border-radius: 80px;
+    
+    /* Outros estilos */
+    max-width: 100%; /* Garante que não ultrapasse o contêiner em telas pequenas */
+    margin: 3rem 0 4rem 0;
     box-shadow: var(--sombra-card);
 }
 /* ----------------------------------------------------
@@ -251,7 +307,7 @@ footer a {
 }
 
 .product-card h3 {
-    color: var(--cor-primaria);
+    color: var(--cor-primaria); /* Alterado para Laranja Pêssego */
     margin-bottom: 0.5rem;
 }
 
@@ -267,8 +323,10 @@ footer a {
  */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .gallery-item {
@@ -296,7 +354,7 @@ footer a {
     max-width: 600px;
     margin: 0 auto;
     padding: 2rem;
-    background-color: var(--cor-fundo-secundario);
+    background-color: var(--cor-fundo-secundario); /* Alterado para Amarelo Pastel */
     border-radius: 10px;
     box-shadow: var(--sombra-card);
 }
@@ -335,5 +393,18 @@ footer a {
 }
 
 .info-box strong {
-    color: var(--cor-secundaria);
+    color: var(--cor-secundaria); /* Alterado para Laranja Escuro */
+}
+
+/* Ajuste de Placeholder na Index para refletir a nova cor */
+.hero-image[src*="4CAF50"] {
+    /* Esta regra específica é para atualizar a cor do placeholder na index.html */
+    content: url(https://placehold.co/600x400/FF9800/FFFFFF?text=Bem-vindo+ao+Melhor+Amigo);
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
 }
